@@ -1,4 +1,3 @@
-# modules/advanced_text_module.py
 """
 Module: advanced_text_module.py
 Description: Task 4 - Advanced text analysis with predefined string
@@ -32,10 +31,9 @@ def get_words(text: str) -> List[str]:
     Returns:
         List of words in lowercase
     """
-    # Replace punctuation with spaces
+   
     for punct in ",.!?;:":
         text = text.replace(punct, ' ')
-    # Split and filter out empty strings
     return [word for word in text.lower().split() if word]
 
 

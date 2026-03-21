@@ -1,4 +1,3 @@
-# modules/common/input_utils.py
 """
 Module: input_utils.py
 Description: Common input handling functions for all tasks
