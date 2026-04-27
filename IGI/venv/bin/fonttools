@@ -1,0 +1,6 @@
+#!/home/leva/Documents/bsuir_mint/semester_4/453505_Levchishin_6/IGI/venv/bin/python3
+import sys
+from fontTools.__main__ import main
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(main())

@@ -1,0 +1,10 @@
+Hello World! This is a sample text for testing the text analysis program. 
+Are you ready to test all features? Yes, let's begin immediately!
+Check these special words: Windows10, MacOS12, Linux, Python3.9, DataScience2024.
+Some words that end with letter R: car, mirror, driver, computer, processor.
+Words followed by dot: Important. Example. Another one.
+Smileys test: :-) ;-) :---))) ;[[[[ :)) ;]]] 
+HTML colors: #FFFFFF (white), #FF0000 (red), #00FF00 (green), #0000FF (blue), #123ABC, #F50.
+The minimum length word is 'a' or 'I'. The longest word ending with r is 'processor'.
+What about questions? How many are here? Also exclamations! Wow! Amazing!
+Make sure to test punctuation: dots, commas, exclamation marks!

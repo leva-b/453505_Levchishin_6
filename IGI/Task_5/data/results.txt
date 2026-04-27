@@ -1,0 +1,14 @@
+=== TASK 5 RESULTS (Variant 6) ===
+Matrix shape: (4, 4)
+Generated matrix:
+-18	22	-33	-20
+-45	-4	-12	18
+31	31	19	31
+11	0	17	49
+
+Negative odd elements: [-33, -45]
+Count of negative odd elements: 2
+Sum of absolute values of negative odd elements: 78
+Standard deviation (NumPy): 8.4853 (rounded: 8.49)
+Standard deviation (formula): 8.4853 (rounded: 8.49)
+Methods agree: True

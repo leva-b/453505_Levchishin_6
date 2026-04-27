@@ -1,0 +1,26 @@
+============================================================
+TEXT ANALYSIS RESULTS (Variant 6)
+============================================================
+
+1. Number of sentences: 19
+   - Declarative (.) : 10
+   - Interrogative (?) : 3
+   - Imperative (!) : 6
+
+2. Average sentence length (characters, words only): 23.95
+3. Average word length: 4.79
+4. Number of smileys: 6
+
+--- VARIANT 6 SPECIFIC ---
+5. Words starting with capital letter and containing digits (6):
+   Windows10, MacOS12, Python3, DataScience2024, FF0000, F50
+
+6. Minimum word length: 1
+   Words with that length (6): a, s, R, a, I, r
+
+7. Words followed by a dot (5):
+   program, processor, Important, Example, one
+
+8. Longest word ending with 'r': 'processor'
+
+9. HTML color check: '12' -> invalid
