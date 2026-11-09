@@ -1,0 +1,178 @@
+{
+  "checked_pages": 41,
+  "checks": [
+    "HTML parsing",
+    "unique IDs",
+    "label targets",
+    "image alt attributes",
+    "table headers references",
+    "one main and one h1",
+    "no CSS or JavaScript"
+  ],
+  "pages": [
+    {
+      "page": "guest-home",
+      "issues": []
+    },
+    {
+      "page": "guest-about",
+      "issues": []
+    },
+    {
+      "page": "guest-news",
+      "issues": []
+    },
+    {
+      "page": "guest-glossary",
+      "issues": []
+    },
+    {
+      "page": "guest-contacts",
+      "issues": []
+    },
+    {
+      "page": "guest-privacy",
+      "issues": []
+    },
+    {
+      "page": "guest-vacancies",
+      "issues": []
+    },
+    {
+      "page": "guest-reviews",
+      "issues": []
+    },
+    {
+      "page": "guest-promos",
+      "issues": []
+    },
+    {
+      "page": "guest-services",
+      "issues": []
+    },
+    {
+      "page": "guest-vehicles",
+      "issues": []
+    },
+    {
+      "page": "guest-drivers",
+      "issues": []
+    },
+    {
+      "page": "guest-register",
+      "issues": []
+    },
+    {
+      "page": "guest-login",
+      "issues": []
+    },
+    {
+      "page": "guest-guide",
+      "issues": []
+    },
+    {
+      "page": "guest-cart",
+      "issues": []
+    },
+    {
+      "page": "guest-payment",
+      "issues": []
+    },
+    {
+      "page": "guest-services-1",
+      "issues": []
+    },
+    {
+      "page": "guest-news-3",
+      "issues": []
+    },
+    {
+      "page": "guest-drivers-1",
+      "issues": []
+    },
+    {
+      "page": "guest-payment-errors",
+      "issues": []
+    },
+    {
+      "page": "admin-profile",
+      "issues": []
+    },
+    {
+      "page": "admin-profile-edit",
+      "issues": []
+    },
+    {
+      "page": "admin-orders",
+      "issues": []
+    },
+    {
+      "page": "admin-orders-create",
+      "issues": []
+    },
+    {
+      "page": "admin-reviews",
+      "issues": []
+    },
+    {
+      "page": "admin-statistics",
+      "issues": []
+    },
+    {
+      "page": "admin-orders-1",
+      "issues": []
+    },
+    {
+      "page": "admin-orders-1-edit",
+      "issues": []
+    },
+    {
+      "page": "admin-orders-1-delete",
+      "issues": []
+    },
+    {
+      "page": "admin-orders-1-status",
+      "issues": []
+    },
+    {
+      "page": "admin-vacancies-3-apply",
+      "issues": []
+    },
+    {
+      "page": "client1-profile",
+      "issues": []
+    },
+    {
+      "page": "client1-profile-edit",
+      "issues": []
+    },
+    {
+      "page": "client1-orders",
+      "issues": []
+    },
+    {
+      "page": "client1-orders-create",
+      "issues": []
+    },
+    {
+      "page": "client1-reviews",
+      "issues": []
+    },
+    {
+      "page": "driver1-profile",
+      "issues": []
+    },
+    {
+      "page": "driver1-profile-edit",
+      "issues": []
+    },
+    {
+      "page": "driver1-orders",
+      "issues": []
+    },
+    {
+      "page": "driver1-reviews",
+      "issues": []
+    }
+  ]
+}

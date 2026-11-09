@@ -1,0 +1,31 @@
+{% extends 'cargohandling/base.html' %}
+{% block title %}Корзина — ГрузоПеревозки{% endblock %}
+{% block content %}
+<h1>Корзина заказа</h1>
+<table>
+    <caption>Выбранные услуги</caption>
+    <thead><tr><th scope="col">Услуга</th><th scope="col">Цена, BYN</th><th scope="col">Количество</th><th scope="col">Действия</th></tr></thead>
+    <tbody>
+    {% for service in services %}
+        <tr>
+            <th scope="row"><a href="{% url 'service_detail' service.pk %}" target="_self">{{ service.name }}</a></th>
+            <td>{{ service.price }}</td>
+            <td>1</td>
+            <td>
+                <button type="button" disabled aria-label="Уменьшить количество: {{ service.name }}">−</button>
+                <button type="button" disabled aria-label="Увеличить количество: {{ service.name }}">+</button>
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="remove" value="{{ service.pk }}" aria-label="Удалить из корзины: {{ service.name }}">🗑</button>
+                </form>
+            </td>
+        </tr>
+    {% empty %}
+        <tr><td colspan="4">Корзина пуста.</td></tr>
+    {% endfor %}
+    </tbody>
+    <tfoot><tr><th scope="row">Итого</th><td>{{ total }}</td><td colspan="2">BYN</td></tr></tfoot>
+</table>
+{% if services %}<p><a href="{% url 'payment' %}">💳 Оплатить</a></p>{% endif %}
+<p><a href="{% url 'services' %}" target="_self">Вернуться к услугам</a></p>
+{% endblock %}

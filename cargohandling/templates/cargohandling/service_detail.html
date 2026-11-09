@@ -1,0 +1,22 @@
+{% extends 'cargohandling/base.html' %}
+{% block title %}{{ service.name }} — ГрузоПеревозки{% endblock %}
+{% block content %}
+<article itemscope itemtype="https://schema.org/Service">
+    <h1 itemprop="name">{{ service.name }}</h1>
+    <p itemprop="description">{{ service.description }}</p>
+    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+        <meta itemprop="priceCurrency" content="BYN">
+        <p>Цена: <data itemprop="price" value="{{ service.price|stringformat:'.2f' }}">{{ service.price }}</data> BYN за услугу.</p>
+    </div>
+    {% if in_cart %}
+        <p>Услуга уже в корзине.</p>
+    {% else %}
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">🛒 Добавить в корзину</button>
+        </form>
+    {% endif %}
+    <p><a href="{% url 'cart' %}">Перейти в корзину</a></p>
+</article>
+<p><a href="{% url 'services' %}" target="_self">Все услуги</a></p>
+{% endblock %}

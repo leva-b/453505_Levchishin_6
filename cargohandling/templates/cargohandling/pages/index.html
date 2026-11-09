@@ -1,0 +1,94 @@
+{% extends 'cargohandling/base.html' %}
+
+{% load static %}
+{% block title %}Главная — ГрузоПеревозки{% endblock %}
+
+{% block content %}
+<section>
+    <h1>Грузоперевозки — надёжная доставка грузов</h1>
+    <p>Автоматизация работы компании, занимающейся перевозкой грузов посредством автотранспорта.</p>
+    <p>
+        <a href="{% url 'order_create' %}">Оформить заказ</a>
+        &nbsp;
+        <a href="{% url 'services' %}">Наши услуги</a>
+    </p>
+</section>
+
+{% if last_article %}
+<section>
+    <h2>Последняя новость</h2>
+    <article>
+        <h3><a href="{% url 'article_detail' last_article.pk %}">{{ last_article.title }}</a>
+</h3>
+        <p><small>{{ last_article.published_at|date:"d/m/Y" }}</small>
+</p>
+        {% if last_article.image %}
+            <img src="{{ last_article.image.url }}" alt="{{ last_article.title }}" width="400">
+        {% endif %}
+        <p>{{ last_article.summary }}</p>
+        <a href="{% url 'article_detail' last_article.pk %}">Читать далее</a>
+    </article>
+</section>
+{% endif %}
+
+<section>
+    <h2>Данные внешних API</h2>
+    <table>
+        <tr>
+            <th>WorldTimeAPI</th>
+            <td>
+                {% if world_time.available %}
+                    {{ world_time.timezone }}: {{ world_time.datetime }}
+                {% else %}
+                    API временно недоступен
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>open.er-api.com</th>
+            <td>
+                {% if currency_rate.available %}
+                    1 {{ currency_rate.base }} = {{ currency_rate.rate }} {{ currency_rate.target }}
+                {% else %}
+                    API временно недоступен
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+</section>
+
+<section aria-labelledby="catalog-title">
+    <h2 id="catalog-title">Каталог услуг</h2>
+    <ul>{% for service in services %}<li><a href="{% url 'service_detail' service.pk %}" target="_self">{{ service.name }}</a> — {{ service.price }} руб.</li>{% empty %}<li>Каталог скоро появится.</li>{% endfor %}</ul>
+</section>
+<section aria-labelledby="banners-title">
+    <h2 id="banners-title">Доставка для ваших задач</h2>
+    <figure>
+        <picture><source media="(max-width: 600px)" srcset="{% static 'cargohandling/photos/city-small.jpg' %}"><img src="{% static 'cargohandling/photos/city.jpg' %}" alt="Фургон доставки на городской улице">
+</picture>
+        <figcaption>Городская доставка — от склада до двери.</figcaption>
+    </figure>
+    <figure><img src="{% static 'cargohandling/photos/road.jpg' %}" width="600" alt="Грузовые автомобили на шоссе" loading="lazy">
+<figcaption>Соединяем города Беларуси.</figcaption>
+</figure>
+</section>
+<section aria-labelledby="partners-title">
+    <h2 id="partners-title">Компании-партнёры</h2>
+    <p>Учебный пример списка партнёров.</p>
+    <ul>{% for partner in partners %}<li><a href="{{ partner.website }}" target="_blank" rel="noopener noreferrer"><img src="{{ partner.logo.url }}" width="160" height="100" alt="Логотип {{ partner.name }}"> {{ partner.name }}</a>
+</li>{% empty %}<li>Список партнёров пока пуст.</li>{% endfor %}</ul>
+</section>
+<section>
+    <h2>Что мы предлагаем</h2>
+    <ul>
+        <li><a href="{% url 'drivers' %}">Профессиональные водители</a>
+</li>
+        <li><a href="{% url 'vehicles' %}">Современный автопарк</a>
+</li>
+        <li><a href="{% url 'services' %}">Широкий спектр услуг</a>
+</li>
+        <li><a href="{% url 'promos' %}">Промокоды и скидки</a>
+</li>
+    </ul>
+</section>
+{% endblock %}
