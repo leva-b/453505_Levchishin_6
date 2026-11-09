@@ -1,0 +1,20 @@
+{% extends 'cargohandling/base.html' %}
+{% load static %}
+{% block title %}Оплата — ГрузоПеревозки{% endblock %}
+{% block content %}
+<h1>Оплата заказа</h1>
+<p>Учебная форма: деньги не списываются, введённые сведения не сохраняются.</p>
+{% if checked %}<p role="status">Поля заполнены верно. Оплата не выполнялась.</p>{% endif %}
+<form method="post">{% csrf_token %}
+<fieldset>
+<legend>Сведения для оплаты</legend>
+{{ form.as_div }}
+</fieldset>
+<p><a href="{% url 'privacy' %}">Политика конфиденциальности</a>
+</p>
+<button type="submit">Проверить заполнение</button>
+<button type="button" disabled>💳 Оплатить</button>
+</form>
+<p><a href="{% url 'cart' %}">Вернуться в корзину</a>
+</p>
+{% endblock %}

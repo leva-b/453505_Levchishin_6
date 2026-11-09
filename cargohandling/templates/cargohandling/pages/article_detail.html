@@ -1,0 +1,19 @@
+{% extends 'cargohandling/base.html' %}
+
+{% block title %}{{ article.title }} — ГрузоПеревозки{% endblock %}
+
+{% block content %}
+<article itemscope itemtype="https://schema.org/Article">
+    <h1 itemprop="headline">{{ article.title }}</h1>
+    <p><small>Опубликовано: <time itemprop="datePublished" datetime="{{ article.published_at|date:'Y-m-d' }}">{{ article.published_at|date:"d/m/Y" }}</time></small></p>
+
+    {% if article.image %}
+        <img src="{{ article.image.url }}" alt="{{ article.title }}" width="400">
+    {% endif %}
+
+    <p><strong>{{ article.summary }}</strong></p>
+    <div itemprop="articleBody">{{ article.content|linebreaks }}</div>
+</article>
+
+<p><a href="{% url 'articles' %}">Назад к новостям</a></p>
+{% endblock %}
