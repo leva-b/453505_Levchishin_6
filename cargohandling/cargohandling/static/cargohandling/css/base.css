@@ -1,0 +1,87 @@
+/* ЛР 2: собственные стили без библиотек. */
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/Manrope.ttf') format('truetype');
+    font-weight: 200 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --ink: #332c2f;
+    --muted: #625b61;
+    --green: #24613c;
+    --pale: #e0ecdb;
+    --line: #d4cfc4;
+    --paper: #fffdf6;
+    --plum: #572440;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    color: var(--ink);
+    background: #f7f4ea;
+    font: 400 1rem/1.65 'Manrope', 'Trebuchet MS', sans-serif;
+    overflow-wrap: break-word;
+}
+
+img, video, iframe { max-width: 100%; height: auto; }
+audio { max-width: 100%; }
+figure { margin: 1rem 0; }
+figcaption, small { color: var(--muted); }
+
+h1, h2, h3 { line-height: 1.25; margin: 0 0 .8rem; }
+h1 { text-transform: uppercase; letter-spacing: .025em; font-size: clamp(1.7rem, 3vw, 2.6rem); }
+h2 { font-size: clamp(1.3rem, 2vw, 1.7rem); }
+p { margin: .65rem 0 1rem; }
+
+pre, code, kbd, samp { font-family: Consolas, 'Courier New', monospace; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+
+/* Ссылки, атрибутные селекторы и состояния. */
+a:link { color: var(--green); }
+a:visited { color: #723954; }
+a:hover { color: var(--plum); text-decoration-thickness: .15em; }
+a:active { color: #49112e; }
+:focus-visible { outline: 3px solid #a8628d; outline-offset: 3px; }
+
+a[href^="mailto:"]::before { content: '✉ '; }
+a[href$=".txt"] { font-weight: 700; }
+a[href^="tel:"] { white-space: nowrap; }
+::selection { background: #c0e5b5; color: var(--plum); }
+
+body > a[href="#main-content"] {
+    position: absolute; left: -10000px; top: .5rem; z-index: 50;
+    background: var(--paper); padding: .5rem 1rem;
+}
+body > a[href="#main-content"]:focus { left: .5rem; }
+
+.site-header {
+    position: sticky; top: 0; z-index: 30;
+    background: var(--plum);
+    color: var(--paper);
+    border-bottom: 3px solid #98bb89;
+}
+.site-header nav, .site-footer, main { max-width: 1120px; margin: auto; padding: 1rem 1.4rem; }
+.site-header nav { display: flex; align-items: center; flex-wrap: wrap; gap: .55rem 1.5rem; }
+.site-header a { color: #fffdf6; text-decoration: none; }
+.site-header a:hover, .site-header a:focus-visible { color: #d3efb9; text-decoration: underline; }
+
+.site-header .brand { display: inline-flex; align-items: center; gap: .5rem; margin-right: auto; font: bold 1.5rem Georgia, serif; font-kerning: normal; }
+.brand img { background: var(--paper); }
+.customer-links, .site-header nav > div { display: flex; flex-wrap: wrap; gap: .75rem; margin: 0; font-size: .88rem; }
+.main-navigation { order: 1; width: 100%; display: flex; flex-wrap: wrap; gap: .3rem 1rem; margin: 0; padding-top: .55rem; border-top: 1px solid #936c82; }
+
+main { min-height: 65vh; padding-top: 1.8rem; padding-bottom: 3rem; }
+main > section, main > article, main > form, main > div:not(.contact-list) {
+    padding: 1.4rem 0; border-top: 1px solid var(--line); margin-bottom: 1rem;
+}
+main > h1 { margin: .2rem 0 1.4rem; }
+
+.site-footer { color: var(--muted); border-top: 1px solid var(--line); }
+.site-footer section { max-width: 420px; }
+.site-footer pre { font-size: .85rem; }
+
