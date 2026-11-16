@@ -9,7 +9,7 @@
 {% if company %}
     <section itemscope itemtype="https://schema.org/Organization">
         {% if company.logo %}
-            <img src="{{ company.logo.url }}" alt="Логотип {{ company.name }}" width="200">
+            <img class="company-logo" src="{{ company.logo.url }}" alt="Логотип {{ company.name }}" width="200">
         {% endif %}
         <h2 itemprop="name">{{ company.name }}</h2>
         {% if company.founded_year %}
@@ -34,29 +34,18 @@
 
         {% if company.requisites %}
             <h3>Реквизиты</h3>
-            <pre>{{ company.requisites }}</pre>
+            <pre class="requisites">{{ company.requisites }}</pre>
         {% endif %}
     </section>
 
     {% if company.history.all %}
-        <section>
+        <section class="company-history">
             <h2>История компании</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Год</th>
-                        <th>Событие</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for event in company.history.all %}
-                        <tr>
-                            <td>{{ event.year }}</td>
-                            <td>{{ event.event }}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+            <ol class="history-list">
+                {% for event in company.history.all %}
+                    <li><time datetime="{{ event.year }}">{{ event.year }}</time> — {{ event.event }}</li>
+                {% endfor %}
+            </ol>
         </section>
     {% endif %}
 {% else %}
@@ -74,7 +63,7 @@
 <iframe src="{% static 'cargohandling/delivery-scheme.html' %}" title="Этапы доставки груза" width="480" height="200" loading="lazy">
 </iframe>
 </section>
-<section aria-labelledby="certificate-title">
+<section class="certificate" aria-labelledby="certificate-title">
 <h2 id="certificate-title">Сертификат</h2>
 <p>{{ company.certificate|default:'Учебный образец сертификата. Не является официальным документом.'|linebreaksbr }}</p>
 </section>

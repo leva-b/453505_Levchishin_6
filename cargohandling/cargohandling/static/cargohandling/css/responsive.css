@@ -1,0 +1,27 @@
+@media (max-width: 720px) {
+    .site-header nav, .site-footer, main { padding: .8rem; }
+    .site-header nav { max-height: 40vh; overflow-y: auto; }
+
+    main > .hero { grid-template-columns: 1fr; }
+    .hero-photo { height: 12rem; }
+    .latest-news article { display: block; }
+    .latest-news article img { width: 100%; margin-bottom: .6rem; }
+    .main-navigation { font-size: .88rem; }
+
+    .vacancy-card, .vacancy-card:nth-child(2n) { float: none; width: 100%; margin: 0 0 1rem; }
+    .news-card img { width: 120px; height: 90px; }
+    .news-detail .article-body { columns: 1; }
+    .partner-list li { width: 145px; min-height: 145px; }
+
+    table { display: block; overflow-x: auto; }
+}
+
+@media (max-height: 620px) {
+    .site-header nav { padding-top: .35rem; padding-bottom: .35rem; }
+    .site-header .main-navigation { margin: .2rem 0; line-height: 1.6; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .banner img { animation: none; }
+}

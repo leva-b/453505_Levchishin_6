@@ -6,21 +6,20 @@
 <h1>Промокоды</h1>
 
 <h2>Активные</h2>
+<ul class="promo-list">
 {% for promo in active %}
-    <div>
-        <p>{{ promo.code }}</p>
-        <p>{{ promo.discount_percent }}%</p>
-    </div>
+    <li><strong>{{ promo.code }}</strong> — скидка {{ promo.discount_percent }}%</li>
 {% empty %}
-    <p>Нет активных промокодов.</p>
+    <li>Нет активных промокодов.</li>
 {% endfor %}
+</ul>
 
 <h2>Архив</h2>
+<ul class="promo-list archive">
 {% for promo in archived %}
-    <div>
-        <p>{{ promo.code }}</p>
-    </div>
+    <li>{{ promo.code }}</li>
 {% empty %}
-    <p>Нет архивных промокодов.</p>
+    <li>Нет архивных промокодов.</li>
 {% endfor %}
+</ul>
 {% endblock %}

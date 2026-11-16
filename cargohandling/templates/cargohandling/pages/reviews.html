@@ -9,7 +9,7 @@
 {% if user.is_authenticated %}
     <section id="review-form">
         <h2>Оставить отзыв</h2>
-        <form method="post">
+        <form class="review-form" method="post">
             {% csrf_token %}
             {% for field in form %}
                 <div>
@@ -39,7 +39,7 @@
     <h2>Все отзывы ({{ reviews|length }})</h2>
     {% if reviews %}
         {% for review in reviews %}
-            <div>
+            <div class="review-card">
                 <strong>{{ review.user.username }}</strong>
                 &nbsp;
                 <span>

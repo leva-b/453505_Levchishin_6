@@ -6,9 +6,9 @@
 <h1>Контакты</h1>
 
 {% if contacts %}
-    <div>
+    <div class="contact-list">
         {% for contact in contacts %}
-            <div>
+            <div class="contact-card">
                 {% if contact.photo %}
                     <img src="{{ contact.photo.url }}" alt="Иллюстративное фото работника склада" width="120">
                     <p><small>Иллюстративное фото; сотрудник учебного проекта вымышленный.</small></p>

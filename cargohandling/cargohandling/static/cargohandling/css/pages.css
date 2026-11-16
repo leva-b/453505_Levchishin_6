@@ -1,0 +1,59 @@
+/* О компании: трансформация, список истории и сертификат. */
+.company-logo { display: block; margin: .5rem auto 1rem; transform: rotate(-4deg); }
+
+.history-list { padding-left: 1.7rem; }
+.history-list li { padding: .4rem .6rem; border-left: 3px solid var(--green); }
+.history-list li:nth-child(even) { background: var(--pale); }
+.history-list time { font-weight: 800; }
+
+.requisites { padding: 1rem; background: var(--pale); border-left: 3px solid var(--green); font-family: Georgia, 'Times New Roman', serif; }
+
+.certificate {
+    position: relative; z-index: 1; text-align: center;
+    border: 20px solid transparent;
+    -webkit-border-image: url('../certificate-border.svg') 20 round;
+    border-image: url('../certificate-border.svg') 20 round;
+    background: linear-gradient(#fffdf3d9, #f5e9cecc), url('../certificate-paper.svg');
+    box-shadow: 0 9px 24px #7c66352b;
+}
+.certificate h2 { font-variant: small-caps; letter-spacing: .12em; }
+.certificate p { font: 1.1rem/1.8 Georgia, 'Times New Roman', serif; }
+
+video { border-radius: 8px; background: #332c2f; }
+audio { accent-color: var(--green); }
+iframe { min-height: 190px; border: 1px solid var(--line); border-radius: 8px; }
+
+/* Новости: обрезка анонса и многоколоночный текст статьи. */
+.news-card { display: flow-root; border-top: 1px solid var(--line); padding: 1rem 0; margin: 1rem 0; }
+.news-card img { float: left; width: 180px; height: 120px; object-fit: cover; margin: 0 1rem .5rem 0; }
+.news-summary { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+.news-detail .article-body { columns: 2 28ch; column-gap: 2rem; column-rule: 1px solid var(--line); }
+.news-detail .article-body p { text-indent: 1.3em; text-align: justify; }
+.news-detail .article-body p:first-child::first-letter { font: 2rem Georgia, serif; color: var(--green); }
+
+/* Контакты — Flexbox, вакансии — плавающие блоки. */
+.contact-list { display: flex; flex-wrap: wrap; gap: 1rem; }
+.contact-card { flex: 1 1 290px; min-width: 0; padding: 1rem; background: var(--paper); border-top: 3px solid var(--green); }
+.contact-card img { float: left; width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin: 0 1rem .5rem 0; }
+.contact-card p { overflow-wrap: anywhere; }
+
+.vacancy-list::after { content: ''; display: block; clear: both; }
+.vacancy-card { float: left; width: calc(50% - .6rem); margin: 0 .6rem 1.2rem 0; padding: 1rem; border-top: 3px solid var(--green); background: var(--paper); }
+.vacancy-card:nth-child(2n) { float: right; margin: 0 0 1.2rem .6rem; }
+.vacancy-card:nth-child(2n + 1) { clear: left; }
+
+.privacy-page section { border-left: 3px solid var(--plum); padding-left: 1rem; margin: 1.4rem 0; }
+.privacy-page h2 { font-variant: small-caps; }
+
+details { margin: .8rem 0; padding: .8rem 1rem; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; }
+details[open] { border-left: 4px solid var(--green); }
+summary { cursor: pointer; font-weight: 700; }
+
+.review-card { padding: 1rem; border-bottom: 1px solid var(--line); }
+.review-card:nth-child(odd) { background: var(--pale); }
+
+.promo-list li::marker { content: '◆  '; color: var(--green); }
+.promo-list.archive li::marker { content: '◇  '; }
+.promo-list.archive { color: var(--muted); }
+

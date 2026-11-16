@@ -1,0 +1,45 @@
+/* Формы и состояния элементов управления. */
+form { max-width: 720px; }
+form > div { margin: .75rem 0; }
+
+fieldset { margin: .8rem 0; border: 1px solid var(--line); border-radius: 8px; }
+legend { padding: 0 .4rem; font-weight: 700; }
+label { font-weight: 600; }
+
+input, select, textarea, button { font: inherit; }
+:where(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+    max-width: 100%; padding: .5rem .7rem; border: 1px solid #958f86; border-radius: 6px; background: #fff;
+}
+input[type="search"] { min-width: min(290px, 100%); }
+
+input:enabled, select:enabled, textarea:enabled { box-shadow: inset 0 1px 2px #332c2f0d; }
+input:required, select:required, textarea:required { border-left: 3px solid var(--green); }
+input:out-of-range { border-color: #b53c3c; background: #fff1f1; }
+input:checked { accent-color: var(--green); }
+input:disabled, select:disabled, button:disabled { opacity: .55; cursor: not-allowed; }
+
+button, input[type="submit"] { padding: .45rem .9rem; border: 1px solid var(--green); border-radius: 6px; background: var(--green); color: #fff; cursor: pointer; }
+button:hover:not(:disabled), input[type="submit"]:hover { background: #17492b; }
+
+.review-form label { font-weight: 700; }
+.review-form select { font: menu; }
+.review-form textarea { font: message-box; width: 100%; }
+.review-form button[type="submit"] { font: menu; }
+
+/* Таблицы и текстовые приемы. */
+table { width: 100%; border-collapse: collapse; margin: 1rem auto; }
+caption { caption-side: top; text-align: left; font-weight: 800; padding: .5rem 0; }
+th, td { padding: .65rem .75rem; border: 1px solid var(--line); vertical-align: middle; text-align: left; }
+
+thead th { background: #d9e6d5; }
+tbody tr:nth-child(even) { background: #efeee5; }
+tbody tr:first-child { border-top: 2px solid var(--green); }
+td:empty { background: #e2d6db; }
+td:last-child { text-align: right; }
+
+.site-note::before { content: 'Примечание: '; font-weight: 700; color: var(--green); }
+.site-note::after { content: ' ✓'; color: #367f54; }
+
+q:lang(ru) { quotes: '«' '»' '„' '“'; }
+q:lang(en) { quotes: '“' '”' '‘' '’'; }
+
