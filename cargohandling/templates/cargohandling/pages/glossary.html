@@ -1,0 +1,12 @@
+{% extends 'cargohandling/base.html' %}
+{% load static %}
+{% block title %}Словарь терминов — ГрузоПеревозки{% endblock %}
+{% block content %}
+<h1>Словарь терминов и вопросов</h1>
+{% for term in terms %}<details>
+<summary>{{ term.question }}</summary>
+<p>{{ term.answer }}</p>
+<p>Добавлено: <time datetime="{{ term.added_at|date:'Y-m-d' }}">{{ term.added_at|date:'d/m/Y' }}</time>
+</p>
+</details>{% empty %}<p>Термины пока не добавлены.</p>{% endfor %}
+{% endblock %}

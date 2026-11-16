@@ -1,0 +1,57 @@
+{% extends 'cargohandling/base.html' %}
+{% block title %}Услуги — ГрузоПеревозки{% endblock %}
+{% block content %}
+<h1>Услуги</h1>
+
+<form method="get">
+    <p>
+        <label>Поиск: <input type="search" name="q" value="{{ q }}" placeholder="Название услуги"></label>
+        <label>Сортировка:
+            <select name="sort">
+                <option value="name" {% if sort == "name" %}selected{% endif %}>По названию</option>
+                <option value="price" {% if sort == "price" %}selected{% endif %}>Цена по возрастанию</option>
+                <option value="-price" {% if sort == "-price" %}selected{% endif %}>Цена по убыванию</option>
+            </select>
+        </label>
+        <button type="submit">Показать</button>
+    </p>
+</form>
+
+{% for service in services %}
+<article>
+    <h2><a href="{% url 'service_detail' service.pk %}" target="_self">{{ service.name }}</a></h2>
+    <p>{{ service.description }}</p>
+    <p>{{ service.price }} руб.</p>
+</article>
+{% empty %}
+<p>Услуги не найдены.</p>
+{% endfor %}
+
+<section aria-labelledby="rates-title">
+    <h2 id="rates-title">Тарифы</h2>
+    <table>
+        <caption>Стоимость одного оказания услуги, белорусские рубли</caption>
+        <thead>
+            <tr>
+                <th id="rate-service" rowspan="2" scope="col">Услуга</th>
+                <th id="rate-info" colspan="2" scope="colgroup">Условия</th>
+            </tr>
+            <tr>
+                <th id="rate-description" scope="col">Описание</th>
+                <th id="rate-price" scope="col">Цена, BYN</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for service in services %}
+            <tr>
+                <th id="rate-{{ service.pk }}" headers="rate-service" scope="row">{{ service.name }}</th>
+                <td headers="rate-{{ service.pk }} rate-info rate-description">{{ service.description }}</td>
+                <td headers="rate-{{ service.pk }} rate-info rate-price">{{ service.price }}</td>
+            </tr>
+        {% empty %}
+            <tr><td colspan="3">Услуги не найдены.</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}
